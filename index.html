@@ -33,13 +33,13 @@ h2{
         <h1 style="color: white" >Wikipedia Viewer</h1>
 </div>
 <div id="test">
-<h2 id= "testWiki">Hi!</h2>
+<h2 class="testWiki">Hi!</h2>
 </div>
 </div>
 <script>
 $.getJSON("https://en.wikipedia.org/w/api.php?action=opensearch&search=blue&limit=10&namespace=0&format=json", function (b) {
-    $("#testWiki").html(" ");
-    $("#testWiki").append(b[1][0].content + " " + b[2][0].title);
+    $(".testWiki").html(" ");
+    $(".testWiki").append(b[1][0].content + " " + b[2][0].title);
 });
 
 
