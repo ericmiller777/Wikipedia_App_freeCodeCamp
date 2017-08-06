@@ -39,7 +39,7 @@ h2{
 <script>
 $.getJSON("https://en.wikipedia.org/w/api.php?action=opensearch&search=blue&limit=10&namespace=0&format=json&callback=?", function (b) {
     $(".testWiki").html(" ");
-    $(".testWiki").append(b[1][0].content + " " + b[2][0].title);
+    $(".testWiki").append(b[0][0].content + " " + b[2][0].title);
 });
 $(".testWiki").html(" ");
 
