@@ -37,14 +37,12 @@ h2{
 </div>
 </div>
 <script>
-$.ajax({
-    url: "https://en.wikipedia.org/w/api.php?action=opensearch&search=blue&limit=10&namespace=0&format=json&origin=*",
-    type: "GET",
-    dataType: 'jsonp'
-}).done( function ( data ) {
+$.getJSON("https://en.wikipedia.org/w/api.php?action=opensearch&search=blue&limit=10&namespace=0&format=json&callback=?&origin=*", function (b) {
     $(".testWiki").html(" ");
-    $(".testWiki").append(data[1][0].content + " " + data[2][0].content);
-} );
+    $(".testWiki").append(b[1][0].content + " " + b[2][0].title);
+});
+$(".testWiki").html(" ");
+
 
 
 jQuery.fn.center = function () {
