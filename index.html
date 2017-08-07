@@ -43,7 +43,7 @@ $.ajax({
     dataType: 'jsonp'
 }).done( function ( data ) {
     $(".testWiki").html(" ");
-    $(".testWiki").append(data[1][0].content + " " + data[2][0].title);
+    $(".testWiki").append(data[1][0].content + " " + data[2][0].content);
 } );
 
 
