@@ -37,13 +37,16 @@ h2{
 </div>
 </div>
 <script>
-$.getJSON("https://en.wikipedia.org/w/api.php?action=opensearch&search=blue&limit=10&namespace=0&format=json&callback=?", function (b) {
-    $.ajax({ url: searchUrl, data: { format: 'json' }, dataType: 'jsonp' }).done(function(res) { if (typeof callback === 'function') callback(res); });
+$.ajax({
+    url: '//www.mediawiki.org/w/api.php?format=jsonty&action=query&meta=siteinfo&siprop=general&callback=?',
+    data: {
+        format: 'json'
+    },
+    dataType: 'jsonp'
+}).done( function ( data ) {
     $(".testWiki").html(" ");
     $(".testWiki").append(b[1][0].content + " " + b[2][0].title);
-});
-$(".testWiki").html(" ");
-
+} );
 
 
 jQuery.fn.center = function () {
