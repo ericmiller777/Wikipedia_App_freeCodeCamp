@@ -32,9 +32,9 @@ h2{
 <div class="page-header">
         <h1 style="color: white" >Wikipedia Viewer</h1>
 </div>
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"
-    <form class="margin-left: auto; margin-right: auto">
+<div class="row" id="searchWiki">
+    <div  class="col-xs-12 col-sm-4 col-md-3 col-lg-3 col-xl-3">
+    <form>
         <input class="form-control" placeholder="Search Wikipedia">
         </input>
     </form>
@@ -64,6 +64,15 @@ jQuery.fn.center = function () {
                                                 $(window).scrollLeft()) + "px");
     return this;
 }
+
+jQuery.fn.centerHorizontal = function () {
+    this.css("position","absolute");
+    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + 
+                                                $(window).scrollLeft()) + "px");
+    return this;
+}
+
+
 </script>
 <!-- https://en.wikipedia.org/w/api.php?action=opensearch&search=blue&limit=10&namespace=0&format=json    -->
 </body>
