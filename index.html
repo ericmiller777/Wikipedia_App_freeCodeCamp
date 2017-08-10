@@ -43,17 +43,17 @@ h2{
 <div class="input-group">
    <input id="searchBox" type="text" placeholder="Search Wikipedia" class="form-control">
    <span class="input-group-btn">
-        <button id="button" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+        <button id="searchButton" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
    </span>
 </div>
 </form>
 </div>
 </div>
-<div id="test">
-<h2 class="testWiki">Hi!</h2>
+<div id="listWikiEntrys">
 </div>
 </div>
 <script>
+$("#searchButton").on("click", function () {
 $.ajax({
     url: "https://en.wikipedia.org/w/api.php?action=opensearch&search=blue&limit=10&namespace=0&format=json",
     type: "GET",
@@ -62,7 +62,6 @@ $.ajax({
     $(".testWiki").html(" ");
     $(".testWiki").append(data[1][0] + " " + data[2][0]);
 });
-
 
 
 jQuery.fn.center = function () {
@@ -81,7 +80,7 @@ jQuery.fn.centerHorizontal = function () {
     return this;
 }
 var boxHeight = $("#searchBox").height();
-$("#button").height(boxHeight);
+$("#searchButton").height(boxHeight);
 </script>
 <!-- https://en.wikipedia.org/w/api.php?action=opensearch&search=blue&limit=10&namespace=0&format=json    -->
 </body>
