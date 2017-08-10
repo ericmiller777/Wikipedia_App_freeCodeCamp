@@ -61,12 +61,12 @@ $.ajax({
     type: "GET",
     dataType: "jsonp"
     }).done( function ( data ) {
-    $("#searchButton").on("click", function wikiSearch() {
+    $("#searchButton").on("click", function () {
     $(".testWiki").html(" ");
     $(".testWiki").append(data[1][0] + " " + data[2][0] + wikiSearchBoxValue);
     });
 });
-wikiSearch();
+
 jQuery.fn.center = function () {
     this.css("position","absolute");
     this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
