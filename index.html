@@ -62,7 +62,6 @@ $.ajax({
     type: "GET",
     dataType: "jsonp"
     }).done( function ( data ) {
-    var wikiSearchBoxValue = document.getElementById("searchBox").value;
     $(".testWiki").html(" ");
     $(".testWiki").append(data[1][0] + " " + data[2][0]);
 });
