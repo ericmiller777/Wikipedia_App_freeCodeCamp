@@ -57,7 +57,7 @@ li{
 <div class="row" id="listWikiEntrys">
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
 <ul id="searchResults" class="list-group">
-<li class="list-group-item btn btn-default" style="color: blue"><h2 class ="testWiki"></h2></li>
+<li class="list-group-item btn btn-default" style="color: blue"></h2></li>
 </ul>
 </div>
 </div>
@@ -70,8 +70,9 @@ $.ajax({
     type: "GET",
     dataType: "jsonp"
     }).done( function ( data ) {
-    $(".testWiki").html(" ");
-    $(".testWiki").html(data[1][0] + " " + data[2][0]);
+    //$(".testWiki").html(" ");
+    //$(".testWiki").html(data[1][0] + " " + data[2][0]);
+    $(`<li class="list-group-item btn btn-default" style="color: blue">"test"</h2></li>`).after("#searchResults");
 });
 });
 jQuery.fn.center = function () {
