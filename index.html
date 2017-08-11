@@ -64,7 +64,7 @@ $.ajax({
     dataType: "jsonp"
     }).done( function ( data ) {
     $(".testWiki").html(" ");
-    $(".testWiki").append(data[1][0] + " " + data[2][0]);
+    $(".testWiki").html(data[1][0] + " " + data[2][0]);
 });
 });
 jQuery.fn.center = function () {
