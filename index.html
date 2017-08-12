@@ -65,6 +65,7 @@ li{
 </div>
 <script>
 $("#searchButton").on("click", function () {
+$(li).remove();
 var wikiSearchBoxValue = document.getElementById("searchBox").value;
 $.ajax({
     url: "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + wikiSearchBoxValue + "&limit=10&namespace=0&format=json",
