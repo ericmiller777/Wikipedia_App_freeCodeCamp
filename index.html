@@ -73,9 +73,11 @@ $.ajax({
     }).done( function ( data ) {
     //$(".testWiki").html(" ");
     //$(".testWiki").html(data[1][0] + " " + data[2][0]);
-    $(li).remove();
+    var searchsText = "";
     for(var i = 0; i < data[1].length; i++){
-    $(`<li class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;">test</li>`).insertAfter("#searchResults");
+    searchstext += `<li class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;">test</li>`
+    $(html).insertAfter("#searchResults");
+    //$(`<li class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;">test</li>`).insertAfter("#searchResults");
     };
 });
 });
