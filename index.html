@@ -66,6 +66,7 @@ li{
 <script>
 $("#searchButton").on("click", function () {
 var wikiSearchBoxValue = document.getElementById("searchBox").value;
+$("#item").remove;
 $.ajax({
     url: "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + wikiSearchBoxValue + "&limit=10&namespace=0&format=json",
     type: "GET",
@@ -78,7 +79,6 @@ $.ajax({
     results += `<li id="Item" class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;">test</li>`
   };
   $(results).insertAfter("#searchResults");
-  results == "";
     //$(`<li id="results" class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;">test</li>`).insertAfter("#searchResults");
 });
 });
