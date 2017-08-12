@@ -73,7 +73,9 @@ $.ajax({
     }).done( function ( data ) {
     //$(".testWiki").html(" ");
     //$(".testWiki").html(data[1][0] + " " + data[2][0]);
-    $(`<li class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;"><span>test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test </span></li>`).insertAfter("#searchResults");
+    for(var i = 0; i < data[1].length; i++){
+    $(`<li class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;">test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test</li>`).insertAfter("#searchResults");
+    };
 });
 });
 jQuery.fn.center = function () {
