@@ -78,7 +78,7 @@ $.ajax({
     searchText += `<li class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;">test</li>`
     //$(`<li class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;">test</li>`).insertAfter("#searchResults");
     };
-    $(searchText).insertAfter("#searchResults");
+    $("#searchResults"),html(searchText);
 });
 });
 jQuery.fn.center = function () {
