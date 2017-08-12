@@ -75,10 +75,10 @@ $.ajax({
     //$(".testWiki").html(data[1][0] + " " + data[2][0]);
     var searchText = "";
     for(var i = 0; i < data[1].length; i++){
-    searchtext += `<li class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;">test</li>`
+    searchText += `<li class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;">test</li>`
     //$(`<li class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;">test</li>`).insertAfter("#searchResults");
     };
-    $(html).insertAfter("#searchResults");
+    $(searchText).insertAfter("#searchResults");
 });
 });
 jQuery.fn.center = function () {
