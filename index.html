@@ -73,12 +73,12 @@ $.ajax({
     }).done( function ( data ) {
     //$(".testWiki").html(" ");
     //$(".testWiki").html(data[1][0] + " " + data[2][0]);
-    $("#results").remove();
     var results = ""
     for(var i = 0; i < data[1].length; i++){
     results += `<li id="Item" class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;">test</li>`
   };
   $(results).insertAfter("#searchResults");
+  results == "";
     //$(`<li id="results" class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;">test</li>`).insertAfter("#searchResults");
 });
 });
