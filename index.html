@@ -75,7 +75,7 @@ $.ajax({
     //$(".testWiki").html(data[1][0] + " " + data[2][0]);
     var results = ""
     for (var i = 0; i < data[1].length; i++){
-    results += `<li class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;"><a href=${data[3][i]}></a> ${data[1] [i]}</li>`
+    results += `<li class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;"><a  style="display: block;" href=${data[3][i]}></a> ${data[1] [i]}</li>`
   };
 $("#searchResults").html(results);
     //$(`<li id="results" class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;">test</li>`).insertAfter("#searchResults");
