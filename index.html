@@ -85,6 +85,12 @@ $("#searchResults").html(results);
     //$(`<li id="results" class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;">test</li>`).insertAfter("#searchResults");
 });
 });
+
+$("#searchBox").keypress(function(enterKeyPressed){
+    if(enterKeyPressed.which = 13){
+        $("#searchButton").click();
+    }
+});
 jQuery.fn.center = function () {
     this.css("position","absolute");
     this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
