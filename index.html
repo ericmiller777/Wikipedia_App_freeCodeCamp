@@ -87,11 +87,11 @@ $("#searchResults").html(results);
 });
 });
 
-$(document).keydown(function(enterKeyPressed){
-    if(enterKeyPressed.which == 13){
-        $(body).css("background-color", "black");
-    }
-});
+$("#searchBox").keypress(function(event){
+	if(event.which == 13){
+      $("#searchButton").trigger("click");
+  }
+})
 jQuery.fn.center = function () {
     this.css("position","absolute");
     this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
