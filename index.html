@@ -67,7 +67,7 @@ li a{
 </div>
 </div>
 <script>
-$("#searchButton").on("click", function () {
+$("#searchButton").on("click", function (buttonEvent) {
 var wikiSearchBoxValue = document.getElementById("searchBox").value;
 $("ul").html("");
 $.ajax({
@@ -86,13 +86,11 @@ $("#searchResults").html(results);
 });
 });
 
-document.getElementById("#searchBox").addEventListener("keydown", function(enterKeyPressed){
-enterKeyPressed.preventDefault();
-    if(enterKeyPressed.keyCode == 13){
-        document.getElementById("#searchButton").click();
+$("#searchBox").keydown(function(buttonEvent){
+    if(buttonEvent.which == 13){
+        $("#searchButton").trigger("click");
     }
 });
-
 jQuery.fn.center = function () {
     this.css("position","absolute");
     this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
