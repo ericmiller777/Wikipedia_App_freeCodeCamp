@@ -87,12 +87,12 @@ $("#searchResults").html(results);
 });
 });
 
-$("#searchBox").keypress(function(enterKeyPressed){
-    enterKeyPressed.preventDefault();
-	if(enterKeyPressed.which == 13){
-      $(h1).html("test");
-  }
-})
+$("#searchBox").keydown(function(enterKeyPressed){
+    enterKeyPRessed.preventDefault();
+    if(enterKeyPressed.which == 13){
+        $("#searchButton").click();
+    }
+});
 jQuery.fn.center = function () {
     this.css("position","absolute");
     this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
