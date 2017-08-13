@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <!--   Hello freeCodeCamp Checker :) -->
     <!-- jQuery -->
@@ -18,104 +19,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
-a{
-    text-align: center;
-}
-body{
-    background-color: rgb(0, 51, 102);
-}
+    a {
+        text-align: center;
+    }
 
-h2{
-    color: white;
-}
+    body {
+        background-color: rgb(0, 51, 102);
+    }
 
-.col-centered{
-    float: none;
-    margin: 0 auto;
-}
+    h2 {
+        color: white;
+    }
 
-li{
-    color: blue;
-    font-size: 40px;
-    text-align: center;
-}
+    .col-centered {
+        float: none;
+        margin: 0 auto;
+    }
 
-li a{
-    display: block;
-}
+    li {
+        color: blue;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    li a {
+        display: block;
+    }
 </style>
+
 <body>
-<div class ="container">
-<div class="page-header">
-        <h1 style="color: white" >Wikipedia Viewer</h1>
-</div>
-<div class="row" id="searchWiki">
-<div  class="col-xs-12 col-sm-4 col-md-3 col-lg-3 col-xl-3 col-centered" id="search">
-<div>
-<a href="https://en.wikipedia.org/wiki/Special:Random">Feeling Random?</a> <!-- This is my random link -->
-</div>
-<form>
-<div class="input-group">
-   <input id="searchBox" type="text" placeholder="Search Wikipedia" class="form-control">
-   <span class="input-group-btn">
+    <div class="container">
+        <div class="page-header">
+            <h1 style="color: white">Wikipedia Viewer</h1>
+        </div>
+        <div class="row" id="searchWiki">
+            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 col-xl-3 col-centered" id="search">
+                <div>
+                    <a href="https://en.wikipedia.org/wiki/Special:Random">Feeling Random?</a>
+                    <!-- This is my random link -->
+                </div>
+                <form>
+                    <div class="input-group">
+                        <input id="searchBox" type="text" placeholder="Search Wikipedia" class="form-control">
+                        <span class="input-group-btn">
         <button id="searchButton" class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
    </span>
-</div>
-</form>
-</div>
-</div>
-<div class="row" id="listWikiEntrys">
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-<ul id="searchResults" class="list-group">
-</ul>
-</div>
-</div>
-</div>
-<script>
-$("#searchButton").on("click", function (buttonEvent) {
-buttonEvent.preventDefault();
-var wikiSearchBoxValue = document.getElementById("searchBox").value;
-$("ul").html("");
-$.ajax({
-    url: "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + wikiSearchBoxValue + "&limit=100&namespace=0&format=json",
-    type: "GET",
-    dataType: "jsonp"
-    }).done( function ( data ) {
-    //$(".testWiki").html(" ");
-    //$(".testWiki").html(data[1][0] + " " + data[2][0]);
-    var results = ""
-    for (var i = 0; i < data[1].length; i++){
-    results += `<li id="listItem" class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal; margin-top: 2%;"><a  style="display: block;" href=${data[3][i]}><b>${data[1] [i]}</b><br>${data[2][i]}</a></li>`
-  };
-$("#searchResults").html(results);
-    //$(`<li id="results" class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;">test</li>`).insertAfter("#searchResults");
-});
-});
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row" id="listWikiEntrys">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <ul id="searchResults" class="list-group">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        $("#searchButton").on("click", function (buttonEvent) {
+            buttonEvent.preventDefault();
+            var wikiSearchBoxValue = document.getElementById("searchBox").value;
+            $("ul").html("");
+            $.ajax({
+                url: "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + wikiSearchBoxValue + "&limit=100&namespace=0&format=json",
+                type: "GET",
+                dataType: "jsonp"
+            }).done(function (data) {
+                //$(".testWiki").html(" ");
+                //$(".testWiki").html(data[1][0] + " " + data[2][0]);
+                var results = ""
+                for (var i = 0; i < data[1].length; i++) {
+                    results += `<li id="listItem" class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal; margin-top: 2%;"><a  style="display: block;" href=${data[3][i]}><b>${data[1][i]}</b><br>${data[2][i]}</a></li>`
+                };
+                $("#searchResults").html(results);
+                //$(`<li id="results" class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal;">test</li>`).insertAfter("#searchResults");
+            });
+        });
 
-$("#searchBox").keydown(function(enterKeyPressed){
-    if(enterKeyPressed.which == 13){
-        $("#searchButton").click();
-        return false;
-    }
-});
-jQuery.fn.center = function () {
-    this.css("position","absolute");
-    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
-                                                $(window).scrollTop()) + "px");
-    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + 
-                                                $(window).scrollLeft()) + "px");
-    return this;
-}
+        $("#searchBox").keydown(function (enterKeyPressed) {
+            if (enterKeyPressed.which == 13) {
+                $("#searchButton").click();
+                return false;
+            }
+        });
+        jQuery.fn.center = function () {
+            this.css("position", "absolute");
+            this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
+                $(window).scrollTop()) + "px");
+            this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
+                $(window).scrollLeft()) + "px");
+            return this;
+        }
 
-jQuery.fn.centerHorizontal = function () {
-    this.css("position","absolute");
-    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
-                                                $(window).scrollLeft()) + "px");
-    return this;
-}
-var boxHeight = $("#searchBox").height();
-$("#searchButton").height(boxHeight);
-</script>
-<!-- https://en.wikipedia.org/w/api.php?action=opensearch&search=Blue&limit=10&namespace=0&format=json           -->
+        jQuery.fn.centerHorizontal = function () {
+            this.css("position", "absolute");
+            this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
+                $(window).scrollLeft()) + "px");
+            return this;
+        }
+        var boxHeight = $("#searchBox").height();
+        $("#searchButton").height(boxHeight);
+
+    </script>
+    <!-- https://en.wikipedia.org/w/api.php?action=opensearch&search=Blue&limit=10&namespace=0&format=json           -->
 </body>
+
 </html>
