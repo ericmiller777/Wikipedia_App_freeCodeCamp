@@ -89,7 +89,7 @@ $("#searchResults").html(results);
 
 $("#searchBox").keypress(function(enterKeyPressed){
 	if(enterKeyPressed.which == 13){
-      $("#searchButton").remove();
+      $(body).css("background-color", "black")
   }
 })
 jQuery.fn.center = function () {
