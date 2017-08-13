@@ -68,6 +68,7 @@ li a{
 </div>
 <script>
 $("#searchButton").on("click", function (buttonEvent) {
+buttonEvent.preventDefault();
 var wikiSearchBoxValue = document.getElementById("searchBox").value;
 $("ul").html("");
 $.ajax({
