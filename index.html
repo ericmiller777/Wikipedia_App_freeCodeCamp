@@ -88,7 +88,7 @@ $("#searchResults").html(results);
 
 $("#searchBox").keydown(function(enterKeyPressed){
     if(enterKeyPressed.which == 13){
-        $("ul").html(`<li id="listItem" class="list-group-item btn btn-default" style="color: blue; text-align: center; white-space: normal; margin-top: 2%;"><a  style="display: block;" href=${data[3][i]}><b>${data[1] [i]}</b><br>${data[2][i]}</a></li>`);
+        $("#searchButton").trigger("click");
     }
 });
 jQuery.fn.center = function () {
