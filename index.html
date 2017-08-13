@@ -88,6 +88,7 @@ $("#searchResults").html(results);
 });
 
 $("#searchBox").keypress(function(enterKeyPressed){
+    enterKeyPressed.preventDefault();
 	if(enterKeyPressed.which == 13){
       $(h1).html("test");
   }
