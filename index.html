@@ -88,9 +88,9 @@ $("#searchResults").html(results);
 });
 
 $("#searchBox").keydown(function(enterKeyPressed){
-    enterKeyPressed.preventDefault();
     if(enterKeyPressed.which == 13){
         $("#searchButton").click();
+        return false;
     }
 });
 jQuery.fn.center = function () {
