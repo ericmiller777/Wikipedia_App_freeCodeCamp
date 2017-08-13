@@ -86,11 +86,13 @@ $("#searchResults").html(results);
 });
 });
 
-$("#searchBox").keydown(function(enterKeyPressed){
-    if(enterKeyPressed.which == 13){
-        $("#searchButton").trigger("click");
-    }
+document.getElementById("#searchBox").addEventListener("keydown", function(enterKeyPressed){
+event.preventDefault();
+if(event.keycode == 13){
+    document.getElementById("#searchButton").click();
+}
 });
+
 jQuery.fn.center = function () {
     this.css("position","absolute");
     this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
