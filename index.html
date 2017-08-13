@@ -87,7 +87,7 @@ $("#searchResults").html(results);
 });
 });
 
-$("#searchBox").keydown(function(enterKeyPressed){
+$(document).keydown(function(enterKeyPressed){
     if(enterKeyPressed.which == 13){
         $(body).css("background-color", "black");
     }
