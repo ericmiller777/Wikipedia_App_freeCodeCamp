@@ -87,9 +87,9 @@ $("#searchResults").html(results);
 });
 });
 
-$("#searchBox").keypress(function(event){
-	if(event.which == 13){
-      $("#searchButton").trigger("click");
+$("#searchBox").keypress(function(enterKeyPressed){
+	if(enterKeyPressed.which == 13){
+      $("#searchButton").remove();
   }
 })
 jQuery.fn.center = function () {
